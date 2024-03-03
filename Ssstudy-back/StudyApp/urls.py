@@ -1,0 +1,35 @@
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('create_student/', views.create_student, name='create_student'),
+    path('update_student_info/', views.update_student_info, name='update_student_info'),
+    path('create_admin/', views.create_admin,name='create_admin'),
+    path('login_student/', views.login_student,name='login_student'),
+    path('login_admin/', views.login_admin,name='login_admin'),
+    path('get_all_communities/', views.get_all_communities,name='get_all_communities'),
+    path('get_posts_by_community/<int:community_id>/', views.get_posts_by_community,name='get_posts_by_community'),
+    path('get_posts_by_community_and_plabel/<int:community_id>/<str:plabel>/', views.get_posts_by_community_and_plabel,name='get_posts_by_community_and_plabel'),
+    path('get_comments_by_post/<int:post_id>/', views.get_comments_by_post,name='get_comments_by_post'),
+    path('create_post/', views.create_post,name='create_post'),
+    path('create_comment/', views.create_comment,name='create_comment'),
+    path('get_community_details/<int:community_id>/', views.get_community_details,name='get_community_details'),
+    path('get_student_info/', views.get_student_info,name='get_student_info'),
+    path('comments/delete/<int:comment_id>/<str:user_id>/', views.delete_comment, name='delete_comment'),
+    path('delete_post/<int:pid>/<str:user_id>/', views.delete_post, name='delete_post'),
+    path('like_post/<int:post_id>/<str:user_id>/', views.like_post, name='like_post'),
+    path('create_community/', views.create_community,name='create_community'),
+    path('get_student_likes/<str:student_id>/', views.get_student_likes, name='get_student_likes'),
+    path('has_student_liked_post/<str:student_id>/<str:post_id>/', views.has_student_liked_post, name='has_student_liked_post'),
+    path('get_post_likes/<str:post_id>/', views.get_post_likes, name='get_post_likes'),
+    path('edit_post/', views.edit_post, name='edit_post'),
+    path('create_course/', views.create_course, name='create_course'),
+    path('get_all_courses/', views.get_all_courses, name='get_all_courses'),
+    path('upload_file/', views.upload_file, name='upload_file'),
+    path('delete_course/', views.delete_course, name='delete_course'),
+    path('get_files_by_course_id/', views.get_files_by_course_id, name='get_files_by_course_id'),
+    path('delete_file/', views.delete_file, name='delete_file'),
+    path('get_admin_info/', views.get_admin_info,name='get_admin_info'),
+    path('update_admin_info/', views.update_admin_info, name='update_admin_info'),
+]
